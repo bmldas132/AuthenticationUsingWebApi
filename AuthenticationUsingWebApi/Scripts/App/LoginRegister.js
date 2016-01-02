@@ -1,35 +1,15 @@
-﻿/// <reference path="../angular.js" />
+﻿/// <reference path="../angular-cookies.js" />
+/// <reference path="../angular.js" />
 
-var App = angular.module('App', []);
-App.controller('IdentityController', function ($scope,$http) {
-
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + "; " + expires;
-    };
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1);
-            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-        }
-        return "";
-    };
-
-
-
+var App = angular.module('App', ['ngCookies']);
+App.controller('IdentityController', function ($scope,$http,$window,$cookies) {
 
     $scope.form = {};
-
-    $scope.tokenBodyForLogin = {
-
-    };
+    $scope.tokenBodyForLogin = {};
     
+    $scope.SetCookie = function (token) {
+        $cookies.put('_tokenData', token);
+    };
 
     $scope.Register = function () {
         //console.log($scope.form);
@@ -39,12 +19,9 @@ App.controller('IdentityController', function ($scope,$http) {
             ConfirmPassword: $scope.ConfirmPassword
         };
 
-
         $http.post("/api/Account/Register", $scope.form).then(function (response) {
-            alert("Success");
-            
+            alert("Successfully registered. Please sign in to continue.");
         }, function (error) {
-            
             alert("Error!");
         });
     };
@@ -63,16 +40,11 @@ App.controller('IdentityController', function ($scope,$http) {
             },
             data: { username: $scope.username, password: $scope.password, grant_type: "password" }
             }).success(function (data) {
-                alert("Success :D");
-                document.cookie = "_tokenData=" + data.access_token;
-                setCookie("_tokenData", data.access_token, 10);
+                $scope.SetCookie(data.access_token);
+                $window.location.href = "/HTML/Home.html";
             }).error(function () {
-                alert("Failed :(");
-            });
-
+                alert("Login failed. Please try again.");
+        });
     };
-
-    
-
 
 });

@@ -298,8 +298,9 @@
     </Content>
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\App\GetAccessController.js" />
+    <Content Include="Scripts\App\HomeController.js" />
     <Content Include="Scripts\App\LoginRegister.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
