@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <div class="panel panel-info">
+                <form class="panel panel-info">
                     <div class="panel-heading">
                         Register
                     </div>
@@ -67,27 +67,27 @@
                         <label>
                             email
                         </label>
-                        <p><input ng-model="Email" type="text" /></p>
+                        <p><input ng-model="Email" type="text" class="form-control" /></p>
                         <br />
                         <label>
                             password
                         </label>
-                        <p><input ng-model="Password" type="password" /></p>
+                        <p><input ng-model="Password" type="password" class="form-control" /></p>
                         <br />
                         <label>
                             password
                         </label>
-                        <p><input ng-model="ConfirmPassword" type="password" /></p>
+                        <p><input ng-model="ConfirmPassword" type="password" class="form-control" /></p>
                         <br />
-                        <input ng-click="Register()" type="button" value="register" />
+                        <input type="button" ng-click="Register()" value="register" class="btn btn-danger" />
                     </div>
-                </div>
+                </form>
 
 
 
             </div>
             <div class="col-lg-6">
-                <div class="panel panel-primary">
+                <form class="panel panel-primary">
                     <div class="panel-heading">
                         Log In
                     </div>
@@ -95,16 +95,16 @@
                         <label>
                             email
                         </label>
-                        <p><input ng-model="username" type="text" /></p>
+                        <p><input ng-model="username" type="text" class="form-control" /></p>
                         <br />
                         <label>
                             password
                         </label>
-                        <p><input ng-model="password" type="password" /></p>
+                        <p><input ng-model="password" type="password" class="form-control" /></p>
                         <br />
-                        <input ng-click="Login()" type="button" value="Login" />
+                        <input ng-click="Login()" type="button" value="Login"  class="btn btn-primary"/>
                     </div>
-                </div>
+                </form>
 
 
             </div>

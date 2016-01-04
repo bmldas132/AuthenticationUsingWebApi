@@ -32,8 +32,6 @@ app.controller('HomeController', function ($http, $scope,$cookies,$location,$win
         };
     };
 
-
-
     $scope.Logout = function () {
         var tokenValue = $scope.GetCookie("_tokenData");
         $scope.RemoveCookie();

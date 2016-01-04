@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/site.css" rel="stylesheet" />
+    <script src="../SCRIPTS/CommonJS/jquery.js"></script>
+    <script src="../SCRIPTS/CommonJS/bootstrap.js"></script>
+    <script src="../SCRIPTS/CommonJS/angular.js"></script>
+    <script src="../SCRIPTS/CommonJS/loading-bar.js"></script>
+    <script src="../SCRIPTS/CommonJS/angular-local-storage.min.js"></script>
+    <script src="../SCRIPTS/app.js"></script>
+    <script src="../SCRIPTS/Services/authService.js"></script>
+    <script src="../SCRIPTS/Services/authInterceptorService.js"></script>
+    <script src="../SCRIPTS/Controllers/loginController.js"></script>
+</head>
+<body data-ng-app="angularAuthApp">
+    <div class="container" ng-controller="loginController">
+        <div style="padding:50px 30px;">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><center>Login</center></div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" ng-model="loginData.userName" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" ng-model="loginData.password" class="form-control" />
+                                </div>
+                                <input ng-click="login()" type="button" class="btn btn-primary pull-right" value="Sign in" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -14,6 +14,7 @@ using System.Web;
 
 namespace AuthenticationUsingWebApi.Controllers
 {
+    [Authorize]
     public class AspNetUsersController : ApiController
     {
         private Identity2TestEntities db = new Identity2TestEntities();
@@ -27,15 +28,14 @@ namespace AuthenticationUsingWebApi.Controllers
 
         // GET: api/AspNetUsers/5
         [ResponseType(typeof(AspNetUser))]
-        public IHttpActionResult GetAspNetUser(string id)
+        public AspNetUser GetAspNetUser(string id)
         {
             AspNetUser aspNetUser = db.AspNetUsers.Find(id);
-            if (aspNetUser == null)
-            {
-                return NotFound();
-            }
 
-            return Ok(aspNetUser);
+            aspNetUser.PasswordHash = null;
+            aspNetUser.SecurityStamp = null;
+            aspNetUser.AspNetUserClaims = null;
+            return aspNetUser;
         }
 
         // PUT: api/AspNetUsers/5

@@ -237,7 +237,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NewController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -296,9 +296,32 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="MyArea\CSS\bootstrap.css" />
+    <Content Include="MyArea\CSS\bootstrap.min.css" />
+    <Content Include="MyArea\CSS\loading-bar.css" />
+    <Content Include="MyArea\CSS\site.css" />
+    <Content Include="MyArea\HTML\index.html" />
+    <Content Include="MyArea\HTML\login.html" />
+    <Content Include="MyArea\HTML\myProfile.html" />
+    <Content Include="MyArea\HTML\signUp.html" />
+    <Content Include="MyArea\SCRIPTS\app.js" />
+    <Content Include="MyArea\SCRIPTS\CommonJS\angular-local-storage.min.js" />
+    <Content Include="MyArea\SCRIPTS\CommonJS\angular.js" />
+    <Content Include="MyArea\SCRIPTS\CommonJS\bootstrap.js" />
+    <Content Include="MyArea\SCRIPTS\CommonJS\jquery.js" />
+    <Content Include="MyArea\SCRIPTS\CommonJS\loading-bar.js" />
+    <Content Include="MyArea\SCRIPTS\Controllers\indexController.js" />
+    <Content Include="MyArea\SCRIPTS\Controllers\loginController.js" />
+    <Content Include="MyArea\SCRIPTS\Controllers\myProfileController.js" />
+    <Content Include="MyArea\SCRIPTS\Controllers\signUpController.js" />
+    <Content Include="MyArea\SCRIPTS\Services\authInterceptorService.js" />
+    <Content Include="MyArea\SCRIPTS\Services\authService.js" />
+    <Content Include="MyArea\SCRIPTS\Services\indexService.js" />
+    <Content Include="MyArea\SCRIPTS\Services\myProfileService.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-local-storage.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\App\HomeController.js" />
     <Content Include="Scripts\App\LoginRegister.js" />
@@ -362,6 +385,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="IRepository\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
