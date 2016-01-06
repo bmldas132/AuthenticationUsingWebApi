@@ -10,6 +10,7 @@ using AuthenticationUsingWebApi.Models.Database;
 
 namespace AuthenticationUsingWebApi.Controllers
 {
+    [Authorize]
     public class IndexController : ApiController
     {
         [Authorize]
@@ -20,7 +21,8 @@ namespace AuthenticationUsingWebApi.Controllers
         {
             string id = HttpContext.Current.User.Identity.GetUserId();
             AspNetUsersController user = new AspNetUsersController();
-            return user.GetAspNetUser(id);
+            var XYZ = user.GetAspNetUser(id);
+            return XYZ;
         }
     }
 }

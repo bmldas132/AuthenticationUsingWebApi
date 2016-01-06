@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/site.css" rel="stylesheet" />
+    <script src="../SCRIPTS/CommonJS/jquery.js"></script>
+    <script src="../SCRIPTS/CommonJS/bootstrap.js"></script>
+    <script src="../SCRIPTS/CommonJS/angular.js"></script>
+    <script src="../SCRIPTS/CommonJS/angular-local-storage.min.js"></script>
+    <script src="../SCRIPTS/CommonJS/loading-bar.js"></script>
+    <script src="../SCRIPTS/app.js"></script>
+    <script src="../SCRIPTS/Services/authService.js"></script>
+    <script src="../SCRIPTS/Services/authInterceptorService.js"></script>
+    <script src="../SCRIPTS/Controllers/addRoleController.js"></script>
+    <script src="../SCRIPTS/Services/addRoleService.js"></script>
+</head>
+<body data-ng-app="angularAuthApp">
+    <div class="container" ng-controller="addRoleController">
+        <div style="padding:50px 30px;">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><center>Add Role</center></div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>Role Name</label>
+                                    <input type="text" ng-model="newRole.name" class="form-control" />
+                                </div>
+                                <input ng-click="addRole()" type="button" class="btn btn-info pull-right" value="Add Role" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
