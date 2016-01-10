@@ -6,6 +6,7 @@ app.controller('indexController', ['$scope', 'indexService', 'authService', func
     indexService.GetMyProfile().then(function (response) {
         $scope.profileDetail = response.data;
         $scope.IsLoggedIn = true;
+        
     }, function () {
         alert("Failed!");
     });

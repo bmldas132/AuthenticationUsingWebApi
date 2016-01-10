@@ -22,7 +22,7 @@ namespace AuthenticationUsingWebApi.Controllers
 
                 var userStore = new UserStore<ApplicationUser>(db);
                 var userManager = new UserManager<ApplicationUser>(userStore);
-                
+
                 try
                 {
                     await userManager.AddToRoleAsync(userRole.UserId, userRole.RoleId);

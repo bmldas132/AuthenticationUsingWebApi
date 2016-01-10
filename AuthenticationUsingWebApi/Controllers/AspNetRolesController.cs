@@ -37,18 +37,18 @@ namespace AuthenticationUsingWebApi.Controllers
                     var message = ex.Message;
                     return InternalServerError();
                 }
-                
+
             }
-             
+
         }
 
         [Route("api/Role/Get")]
         [HttpGet]
         public string Get()
         {
-            using (Identity2TestEntities db = new Identity2TestEntities())
+            using (AspIdentityAngularEntities db = new AspIdentityAngularEntities())
             {
-                
+
                 var serializer = new JavaScriptSerializer();
                 var serializedResult = serializer.Serialize(db.AspNetRoles.ToList());
                 return serializedResult;

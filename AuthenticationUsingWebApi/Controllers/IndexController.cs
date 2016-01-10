@@ -7,22 +7,32 @@ using System.Web;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using AuthenticationUsingWebApi.Models.Database;
+using AuthenticationUsingWebApi.Models.CustomClass;
 
 namespace AuthenticationUsingWebApi.Controllers
 {
     [Authorize]
     public class IndexController : ApiController
     {
-        [Authorize]
         [HttpGet]
         // api/user/GetDetail
         [Route("api/user/GetDetail")]
-        public AspNetUser GetProfileDetail()
+        public Users GetProfileDetail()
         {
             string id = HttpContext.Current.User.Identity.GetUserId();
             AspNetUsersController user = new AspNetUsersController();
-            var XYZ = user.GetAspNetUser(id);
-            return XYZ;
+            var aspUser = user.GetAspNetUser(id);
+            List<string> userDetail = new List<string>();
+            Users userProfileInfo = new Users()
+            {
+                Id = aspUser.Id,
+                Email = aspUser.Email,
+                EmailConfirmed = aspUser.EmailConfirmed,
+                PhoneNumber = aspUser.PhoneNumber,
+                PhoneNumberConfirmed = aspUser.PhoneNumberConfirmed,
+                UserName = aspUser.UserName
+            };
+            return userProfileInfo;
         }
     }
 }

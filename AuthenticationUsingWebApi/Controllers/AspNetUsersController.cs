@@ -17,12 +17,12 @@ namespace AuthenticationUsingWebApi.Controllers
     [Authorize]
     public class AspNetUsersController : ApiController
     {
-        private Identity2TestEntities db = new Identity2TestEntities();
+        private AspIdentityAngularEntities db = new AspIdentityAngularEntities();
 
         // GET: api/AspNetUsers
         public IQueryable<AspNetUser> GetAspNetUsers()
         {
-            
+
             return db.AspNetUsers;
         }
 

@@ -13,10 +13,10 @@ namespace AuthenticationUsingWebApi.Models.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Identity2TestEntities : DbContext
+    public partial class AspIdentityAngularEntities : DbContext
     {
-        public Identity2TestEntities()
-            : base("name=Identity2TestEntities")
+        public AspIdentityAngularEntities()
+            : base("name=AspIdentityAngularEntities")
         {
         }
     
@@ -25,6 +25,7 @@ namespace AuthenticationUsingWebApi.Models.Database
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
