@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/site.css" rel="stylesheet" />
+    <script src="../SCRIPTS/CommonJS/jquery.js"></script>
+    <script src="../SCRIPTS/CommonJS/bootstrap.js"></script>
+    <script src="../SCRIPTS/CommonJS/angular.js"></script>
+    <script src="../SCRIPTS/CommonJS/angular-local-storage.min.js"></script>
+    <script src="../SCRIPTS/CommonJS/loading-bar.js"></script>
+    <script src="../SCRIPTS/app.js"></script>
+    <script src="../SCRIPTS/Services/authService.js"></script>
+    <script src="../SCRIPTS/Services/authInterceptorService.js"></script>
+
+    <script src="../SCRIPTS/Controllers/addRoleToUserController.js"></script>
+    <script src="../SCRIPTS/Services/AddRoleToUserService.js"></script>
+</head>
+<body data-ng-app="angularAuthApp">
+    <div class="container" ng-controller="addRoleToUserController">
+        {{Users}}
+        <div style="padding:50px 30px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><center>Add Role</center></div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6" style="border-right:1px solid #0094ff">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Select a user</label>
+                                            <select ng-model="newUserRole.UserId" ng-options="user.Id as user.UserName for user in Users" class="form-control">
+                                                <option value="">Select user</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group" ng-repeat="role in Roles" >
+                                            <label for="role{{role.Id}}">
+                                                <input ng-checked="selection.indexOf(role.Id) > -1" ng-click="toggleSelection(role)" type="checkbox" id="role{{role.Id}}" />
+                                                {{role.Name}}
+                                            </label>
+                                        </div>
+                                        <input ng-click="addRoleToUser()" type="button" class="btn btn-info pull-right" value="Add Role" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
