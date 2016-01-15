@@ -11,19 +11,22 @@ using System.Web.Http.Description;
 using AuthenticationUsingWebApi.Models.Database;
 using Microsoft.AspNet.Identity;
 using System.Web;
+using AuthenticationUsingWebApi.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AuthenticationUsingWebApi.Controllers
 {
-    [Authorize]
     public class AspNetUsersController : ApiController
     {
         private AspIdentityAngularEntities db = new AspIdentityAngularEntities();
-
+        private ApplicationDbContext applicaionDB = new ApplicationDbContext();
         // GET: api/AspNetUsers
-        public IQueryable<AspNetUser> GetAspNetUsers()
+        public List<ApplicationUser> GetAspNetUsers()
         {
+            var userStore = new UserStore<ApplicationUser>(applicaionDB);
+            var userManager = new UserManager<ApplicationUser>(userStore);
 
-            return db.AspNetUsers;
+            return userManager.Users.ToList();
         }
 
         // GET: api/AspNetUsers/5

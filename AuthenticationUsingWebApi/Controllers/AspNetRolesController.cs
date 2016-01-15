@@ -1,4 +1,5 @@
 ﻿using AuthenticationUsingWebApi.Models;
+using AuthenticationUsingWebApi.Models.CustomClass;
 using AuthenticationUsingWebApi.Models.Database;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -16,8 +17,12 @@ using System.Web.Script.Serialization;
 namespace AuthenticationUsingWebApi.Controllers
 {
     //[Authorize]
+    [Serializable]
     public class AspNetRolesController : ApiController
     {
+        private AspIdentityAngularEntities db = new AspIdentityAngularEntities();
+
+
         [Route("api/Role/Create")]
         [HttpPost]
         public async Task<IHttpActionResult> Post([FromBody]string roleName)
@@ -29,7 +34,7 @@ namespace AuthenticationUsingWebApi.Controllers
 
                 try
                 {
-                    await roleManager.CreateAsync(new IdentityRole { Name = "Administrator" });
+                    await roleManager.CreateAsync(new IdentityRole { Name = roleName });
                     return Ok();
                 }
                 catch (Exception ex)
@@ -44,15 +49,47 @@ namespace AuthenticationUsingWebApi.Controllers
 
         [Route("api/Role/Get")]
         [HttpGet]
-        public string Get()
+        
+        public List<IdentityRole> Get()
         {
-            using (AspIdentityAngularEntities db = new AspIdentityAngularEntities())
+            using (db)
             {
+                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+                return roleManager.Roles.ToList();
 
-                var serializer = new JavaScriptSerializer();
-                var serializedResult = serializer.Serialize(db.AspNetRoles.ToList());
-                return serializedResult;
+                //var serializer = new JavaScriptSerializer();
+                //var serializedResult = serializer.Serialize(db.AspNetRoles.ToList());
+                //return serializedResult;
             }
+        }
+
+        [Route("api/Role/Get/{userId}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> Get(string userId)
+        {
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                var userStore = new UserStore<ApplicationUser>(db);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+
+                try
+                {
+                    var retval = await userManager.GetRolesAsync(userId);
+                    return Ok(retval);
+                }
+                catch
+                {
+                    return NotFound();
+                }
+            }
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

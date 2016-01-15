@@ -44,6 +44,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.EF6, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.EF6.0.2.0\lib\net45\AutoMapper.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.17.0\lib\net40-Client\DelegateDecompiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.EntityFramework.0.17.0\lib\net45\DelegateDecompiler.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -77,6 +93,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Reflection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.1.0.0.0\lib\Mono.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -313,6 +333,8 @@
     <Content Include="MyArea\CSS\loading-bar.css" />
     <Content Include="MyArea\CSS\site.css" />
     <Content Include="MyArea\HTML\AddRole.html" />
+    <Content Include="MyArea\HTML\AddRoleToUser.html" />
+    <Content Include="MyArea\HTML\DeleteRoleFromUser.html" />
     <Content Include="MyArea\HTML\index.html" />
     <Content Include="MyArea\HTML\login.html" />
     <Content Include="MyArea\HTML\myProfile.html" />
@@ -324,13 +346,17 @@
     <Content Include="MyArea\SCRIPTS\CommonJS\jquery.js" />
     <Content Include="MyArea\SCRIPTS\CommonJS\loading-bar.js" />
     <Content Include="MyArea\SCRIPTS\Controllers\addRoleController.js" />
+    <Content Include="MyArea\SCRIPTS\Controllers\addRoleToUserController.js" />
+    <Content Include="MyArea\SCRIPTS\Controllers\deleteRoleFromUserController.js" />
     <Content Include="MyArea\SCRIPTS\Controllers\indexController.js" />
     <Content Include="MyArea\SCRIPTS\Controllers\loginController.js" />
     <Content Include="MyArea\SCRIPTS\Controllers\myProfileController.js" />
     <Content Include="MyArea\SCRIPTS\Controllers\signUpController.js" />
     <Content Include="MyArea\SCRIPTS\Services\addRoleService.js" />
+    <Content Include="MyArea\SCRIPTS\Services\AddRoleToUserService.js" />
     <Content Include="MyArea\SCRIPTS\Services\authInterceptorService.js" />
     <Content Include="MyArea\SCRIPTS\Services\authService.js" />
+    <Content Include="MyArea\SCRIPTS\Services\deleteRoleFromUserService.js" />
     <Content Include="MyArea\SCRIPTS\Services\indexService.js" />
     <Content Include="MyArea\SCRIPTS\Services\myProfileService.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -371,6 +397,7 @@
     <Content Include="Models\Database\DataModel.edmx.diagram">
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\MyPublishIdentity.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

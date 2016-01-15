@@ -178,3 +178,10 @@ C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsin
 C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\obj\Debug\AuthenticationUsingWebApi.csprojResolveAssemblyReference.cache
 C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\obj\Debug\AuthenticationUsingWebApi.dll
 C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\obj\Debug\AuthenticationUsingWebApi.pdb
+C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\bin\AutoMapper.dll
+C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\bin\AutoMapper.EF6.dll
+C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\bin\DelegateDecompiler.dll
+C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\bin\DelegateDecompiler.EntityFramework.dll
+C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\bin\Mono.Reflection.dll
+C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\bin\AutoMapper.xml
+C:\Users\PIXELSTROKEU4\Source\Repos\AuthenticationUsingWebApi\AuthenticationUsingWebApi\bin\AutoMapper.EF6.xml
